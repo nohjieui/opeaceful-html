@@ -1,0 +1,31 @@
+.login-wrap{
+    /* width: 450px; */
+}
+#login-btn{
+    width: 100%;
+    height: 62%;
+}
+.login-wrap>form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* margin-left: 0; */
+}
+
+.login-wrap .col-9{padding-right: 0;}
+
+.login-log{
+    position: absolute;
+    top: 36%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+.logo {
+    font-size: 50px;
+}
+#opeaceful {
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--color-navy);
+}
