@@ -1,0 +1,138 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  color: #858796;
+  background-color: #f8f9fc;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}
+
+.side-bar {
+  width: 160px;
+  height: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: #4e73df;
+  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+  display: flex;
+  width: 100%;
+  margin: 20px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img > img {
+  width: 60%;
+  height: auto;
+  border-radius: 10%;
+}
+
+.side-bar hr {
+  width: 90%;
+  height: 0px;
+  border: 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.side-bar-ul {
+  padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.side-bar-ul > li {
+  padding: 0.8rem 1.4rem;
+}
+
+.side-bar-ul a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.member-menu {
+  color: #97ace7;
+  cursor: pointer;
+}
+.member-menu-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0000002b;
+  box-shadow: inset 0px 0px 20px #5e5e5e2e;
+}
+
+.member-menu-item a {
+  margin: 8px;
+}
+
+i {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: larger;
+  margin-right: 10px;
+}
+
+a.selected,
+.selected * {
+  color: white;
+}
+
+.content {
+  margin-left: 160px;
+  flex: 1;
+}
+
+#toast {
+  z-index: 9999;
+  visibility: hidden;
+  position: fixed;
+  bottom: 8vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  min-width: 100px;
+  border-radius: 25px;
+  background-color: #000000a4;
+  color: #ffffff;
+  padding: 15px 25px;
+}
+#toast.toastShow {
+  visibility: visible;
+  animation: fade-in 700ms, fade-out 700ms 2000ms;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
