@@ -13,23 +13,25 @@
     --white-hover: rgba(3, 3, 62, 0.09);
     --color-light-gray : rgb(235, 235, 235);
     --color-light-navy:rgba(3, 3, 97, 0.06);
-}
+    /* 기본 배경색상 */
+    --color-background : white;
 
-/* 사이드바 임시 */
-.sidebar{
-    /* border: 1px solid blue; */
-    width: var(--side-bar);
-    /* width: 300px; */
-    height: 100vh;
-    position: fixed;
-    background-color: var(--color-navy);
-    border-radius: 10px;
-    top: 0;
-    left: 0;
-    transition: width 0.3s;
-    z-index: 1; /* 제일 위로 올라와야함 */
-}
+    /*폰트사이즈 뺴놓음*/
+    --font11 : 0.69rem;
+    --font12 : 0.75rem;
+    --font13 : 0.81rem;
+    --font14 : 0.875rem;
+    --font15 : 0.937rem;
+    --font18 : 1.125rem;
+    --font20 : 1.25rem;
 
+
+    --color-serch-box:#ced4da;
+
+    /* 스크롤바 컬러 그라데이션용 */
+    --color-scroll-start : rgb(42, 42, 90);
+    --color-scroll-end :  rgb(66, 66, 156);
+}
 
 .content-wrap{
     width: calc(100vw - var(--side-bar));
@@ -40,8 +42,8 @@
 .title-underline{
     color: var(--color-navy);
     border-bottom: 1px solid var(--color-light-gray);
-    padding-bottom: 20px;
-    margin: 45px 35px 0px 35px;
+    padding-bottom: 30px;
+    margin: 40px 35px 0px 35px;
     font-weight: 600;
 }
 /* 각자 변수 설정하기!!! */
@@ -98,11 +100,10 @@ body{
 }
 .table-common>thead{
     color: var(--color-navy);
-    font-size: 13px;
     border-bottom: 2px solid var(--color-navy);
 }
 .table-common>tbody>tr{
-    font-size: 11px;
+    font-size: var(--font14);
 }
 .table-common>tbody>tr:hover{
     background-color:var(--white-hover);
@@ -137,7 +138,7 @@ body{
 }
 .accordion-button-common{
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125rem; /*18px*/
     padding-bottom: 10px;
 }
 /* ul, li */
@@ -154,7 +155,7 @@ body{
 .low-common { 
     text-align: left;
     margin-left: -3px;
-    font-size: 14px;
+    font-size: 0.875rem; /*14px*/
 }
 
 /* 상단 제목 (페이지 제목) */
@@ -181,7 +182,7 @@ body{
     margin: auto;
 }
 .pagination>li>a {
-    font-size: 12px;
+    font-size: 0.75rem; /*12px*/
     color: var(--color-navy);
     border: none;
 }
@@ -216,14 +217,14 @@ body{
     border-radius: 0.3em;
     width: 350px;
     height: 28px;
-    font-size: 13px;
+    font-size: 0.81rem; /*13px*/
 }
 .search-btn{
     border: none;
     background: none;
 }
 .search-btn>i{
-    font-size: 15px;
+    font-size: 0.937rem; /*15px;*/
     color: grey;
 }
 input::-webkit-search-cancel-button{
@@ -236,16 +237,16 @@ input::-webkit-search-cancel-button{
         <button class="btn btn-outline-secondary search-btn2" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div> */
 /* 검색 박스 width 설정 : 아래 주석 -> 본인 css파일에서 적용! */
-/* .search-wrap2{width: 400px;} */
+.search-wrap2{width: 220px;}
 .btn-outline-secondary {
-    border: 1px solid #ced4da;
+    border: 1px solid var(--color-serch-box);
     --bs-btn-hover-color: none;
     --bs-btn-hover-bg: none;
-    --bs-btn-hover-border-color: #ced4da;
+    --bs-btn-hover-border-color: var(--color-serch-box);
 
     --bs-btn-active-color: none;
     --bs-btn-active-bg: none;
-    --bs-btn-active-border-color: #ced4da;
+    --bs-btn-active-border-color: var(--color-serch-box);
 }
 
 
@@ -280,22 +281,35 @@ input::-webkit-search-cancel-button{
     justify-content: center;
 }
 
+
+/* 모달창 열기위한 버튼 */
+/* 
+    <div>
+        <button type="button" class="w90-btn btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">수정</button>
+    </div>
+*/
+
 /* 모달창 하단 확인/취소 버튼 */
-/* 버튼 클래스에 해당 클래스 부여 후 사용 */
-.ok-common{
-    width: 17%;
-    border-radius: 10px;
-    font-size: 13px;
+/* 
+    <div class="modal-footer">
+        <button type="button" class="w90-btn btn btn-primary">확인</button>
+        <button type="button" class="w90-btn btn btn-outline-primary" data-bs-dismiss="modal" aria-label="Close">취소</button>
+    </div>
+*/
+/* 기본 버튼크기 */
+.w90-btn{width: 90px;}
+
+/*alert 버튼색 변경*/
+.swal-button {
+    background-color: var(--color-navy);
 }
-.cancel-common{
-    border: 1px solid rgb(3, 3, 62);
-    border-radius: 10px;
-    color: rgb(3, 3, 62);
-    width: 17%;
-    font-size: 13px;
+
+.swal-button:not([disabled]):hover {
+    background-color: var(--navy-hover);
 }
 
 
+<<<<<<< Updated upstream
 /* 모달을 열기위한 버튼 */
 /* 
     <div>
@@ -312,3 +326,23 @@ input::-webkit-search-cancel-button{
 */
 /* 기본 버튼크기 */
 .w90-btn{width: 90px;}
+=======
+/* (승은)스크롤바 없애는 클래스 */
+.scroll-bar-none::-webkit-scrollbar {
+    display: none;
+}
+
+/* (승은)스크롤바 디자인 */
+.scroll-bar::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(var(--color-scroll-start) 50%, var(--color-scroll-end));
+    border-radius: 10px;
+}
+.scroll-bar::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+>>>>>>> Stashed changes

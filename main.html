@@ -16,17 +16,67 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
+<style>
+/*변수설정*/
+:root{
+    --side-bar : 60px;
+    --color-navy : rgb(3, 3, 62);
+    --color-gold : #ffc107;
+    --color-white: #fff;
+    --navy-hover:rgba(3, 3, 62, 0.77);
+    --white-hover: rgba(3, 3, 62, 0.09);
+    --color-light-gray : rgb(235, 235, 235);
+    --color-light-navy:rgba(3, 3, 97, 0.06);
+}
+    .w90-btn{width: 90px;}
+    .on_off_btn {
+        height : 45px;
+        border-radius: 10px;
+    }
+    .on_off_btn input[type=radio] {
+        display: none;
+    }
+    .on_off_btn label {
+        display: block;
+        border-radius: 25px;
+        margin: 0 auto;
+        text-align: center;
+        height: -webkit-fill-available;
+        line-height: 45px;
+    }
+        
+    /* Checked */
+    .on_off_btn input[type=radio]:checked + label {
+        background: var(--color-white);
+        border: 1px solid;
+        color: var(--color-navy) ;
+    }
+        
+    /* Disabled */
+    .on_off_btn input[type=radio] + label {
+        border-color:var(--color-navy) ;
+        background-color:var(--color-navy);
+        color: #fff;
+    }
 
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="main.css">
+
+
+</style>
 </head>
 <body>
-    <div class="sidebar"></div>
-    <div class="content-wrap">
-        <div class="main-wrap container">
 
-            
+
+        <div class="d-flex" >
+            <div class="on_off_btn w90-btn">
+                <input type="radio" name="userSex" id="main_on" value="on">
+                <label for="main_on">출근</label>
+            </div>
+                                         
+            <div class="on_off_btn w90-btn">
+                <input type="radio" name="userSex" id="main_off" value="off" checked>
+                <label for="main_off">퇴근</label>
+            </div>
         </div>
-    </div>
+
 </body>
 </html>

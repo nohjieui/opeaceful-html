@@ -16,15 +16,20 @@
 /* 사이드바 */
 .sidebar{
     width: var(--side-bar);
+<<<<<<< Updated upstream
+=======
+    /* width: 300px; */
+>>>>>>> Stashed changes
     height: 100vh;
     position: fixed;
     background-color: var(--color-navy);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    /* top: 0; */
-    /* left: 0; */
+    top: 0;
+    left: 0;
     transition: width 0.3s;
     z-index: 1; /* 제일 위로 올라와야함 */
+    overflow: hidden;
 }
 
 /* 사이드바 오픈 호버 */
@@ -38,7 +43,7 @@
 
 .sidebar-text{
     font-weight: 700;
-    color: var(--color-white);
+    /* color: var(--color-white); */
 }
 .sidebar-cursor{cursor: pointer;}
 /* 사이드바 화살표 */
